@@ -21,9 +21,9 @@
             </div>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li nav-item active>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-link active" })</li>
-                    <li nav-item>@Html.ActionLink("About", "About", "Home", new { @class = "nav-link" })</li>
-                    <li nav-item>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "nav-link" })</li>
+                    <li nav-item active>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })</li>
+                    <li nav-item>@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>
+                    <li nav-item>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
