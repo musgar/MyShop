@@ -9,26 +9,35 @@
 
 </head>
 <body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarColor01" aria-label="Toggle navigation" type="button" data-target="#navbarColor01" data-toggle="collapse">
-                    <span class="navbar-toggler-icon"></span>
-                    <span class="navbar-toggler-icon"></span>
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 @Html.ActionLink("My Shop", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav mr-auto">
-                    <li nav-item active>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })</li>
-                    <li nav-item>@Html.ActionLink("Product Admin", "Index", "ProductManager", null, new { @class = "nav-link" })</li>
-                    <li nav-item>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link active" })
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" aria-expanded="false" aria-haspopup="true" href="#" data-toggle="dropdown">Product Management</a>
+                        <div class="dropdown-menu" style="left: 0px; top: 0px; position: absolute; transform: translate3d(0px, 45px, 0px);" x-placement="bottom-start">
+                            @Html.ActionLink("Product", "Index", "ProductManager", null, new { @class = "dropdown-item" })
+                            @Html.ActionLink("Product Category", "Index", "ProductCategoryManager", null, new { @class = "dropdown-item" })
+                        </div>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
